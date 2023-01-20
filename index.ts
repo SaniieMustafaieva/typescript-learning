@@ -1,22 +1,17 @@
-// const isBirthdayData: boolean = true;
-// let ageData: number = 40;
-// const userNameData: string = "Saniie";
+const isBirthdayData: boolean = true;
+let ageData: number = 40;
+const userNameData: string = "Saniie";
 
-const userData =
-  '{"isBirthdayData":true, "ageData":40, "userNameData": "John"}';
-
-const userObj: {
-  isBirthdayData: true;
-  ageData: 40;
-  userNameData: "John";
-} = JSON.parse(userData);
-
+const createError = (msg: string) => {
+  throw new Error(msg);
+};
 function logBRtMsg(isBirthday: boolean, age: number, userName: string): string {
-  if (isBirthday) {
+  if (isBirthday === true) {
     return `Congrats ${userName.toUpperCase()}, age: ${age + 1}`;
-  } else {
-    return "Error";
+  } else if (isBirthday === false) {
+    return "Too bad";
   }
+  return createError("Error");
 }
 
 // const logBRtMsg = (
